@@ -1,7 +1,16 @@
 {
-  "name": "果果",
-  "age": 23,
-  "excpect_work": "前端开发",
-  "phoneNumber": "19922984760",
-  "email": "mango@imufeng.cn"
+  "own": {
+    "name": "果果",
+    "age": 23,
+    "excpect_work": "前端开发",
+    "phoneNumber": "19922984760",
+    "email": "mango@imufeng.cn"
+  },
+  "detail": {
+    "first": "青青子衿",
+    "second": "悠悠我心",
+    "third": "但为君故",
+    "fourth": "沉吟至今",
+    "fifth": "很高兴认识你！"
+  }
 }
