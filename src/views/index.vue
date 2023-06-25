@@ -3,7 +3,7 @@ import {onBeforeMount, ref} from "vue";
 import ownInfo from "../assets/ownInfo.json";
 
 const circleUrl = ref("")
-const {own,detail} = ownInfo
+const {own,detail,contractInfo} = ownInfo
 const height = ref("");
 onBeforeMount(()=>{
   const h=`${document.documentElement.clientHeight}`
@@ -39,13 +39,38 @@ onBeforeMount(()=>{
             <li>邮箱：{{ own.email }}</li>
           </ul>
         </el-tab-pane>
-        <el-tab-pane label="项目经验">
-          <div id="particles-js">
+        <el-tab-pane label="项目经验"></el-tab-pane>
+        <el-tab-pane label="工作经验"></el-tab-pane>
+        <el-tab-pane label="联系方式">
+          <div>
+            <div></div>
+            <div>
+              <div>
+                <h3>联系方式</h3>
+                <span>一段介绍</span>
+                <el-form>
+                  <el-form-item><el-icon></el-icon>{{contractInfo.qq}}</el-form-item>
+                  <el-form-item><el-icon></el-icon>{{contractInfo.weixin}}</el-form-item>
+                  <el-form-item><el-icon></el-icon>{{own.phoneNumber}}</el-form-item>
+                  <el-form-item><el-icon></el-icon>{{own.email}}</el-form-item>
+                  <el-form-item><el-icon></el-icon>{{contractInfo.github}}</el-form-item>
+                  <el-form-item><el-icon></el-icon>{{contractInfo.blog}}</el-form-item>
+                  <el-form-item><el-icon></el-icon>{{contractInfo.address}}</el-form-item>
 
+                </el-form>
+              </div>
+              <div>
+                <h3>聊一聊</h3>
+                <el-form>
+                  <el-form-item></el-form-item>
+                  <el-form-item></el-form-item>
+                  <el-form-item></el-form-item>
+                  <el-form-item></el-form-item>
+                </el-form>
+              </div>
+            </div>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="工作经验"></el-tab-pane>
-        <el-tab-pane label="联系方式"></el-tab-pane>
       </el-tabs>
     </div>
   </div>
