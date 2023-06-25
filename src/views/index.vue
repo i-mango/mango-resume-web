@@ -1,34 +1,49 @@
 <script setup lang='ts'>
-import {ref} from "vue";
+import {onBeforeMount, ref} from "vue";
 import ownInfo from "../assets/ownInfo.json";
 
 const circleUrl = ref("")
-const {name, age, excpect_work, phoneNumber, email} = ownInfo
-// 获取浏览器可视区域宽高（兼容性比较好，不包括工具栏和滚动条）
-// const browserWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-// const browserHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+const {own,detail} = ownInfo
+const height = ref("");
+onBeforeMount(()=>{
+  const h=`${document.documentElement.clientHeight}`
+  console.log("高度",h)
+  height.value=h
+})
 </script>
 
 <template>
-  <div class="content">
+  <div class="content" :style="{height:height}">
     <!--    左侧-->
     <div class="content-left">
       <el-aside class="aside">
-        <el-avatar :size="50" :src="circleUrl"/>
+        <el-avatar :size="200" :src="circleUrl"/>
         <ul>
-          <li>姓名：{{ name }}</li>
-          <li>年龄：{{ age }}</li>
-          <li>职业：{{ excpect_work }}</li>
-          <li>手机号：{{ phoneNumber }}</li>
-          <li>邮箱：{{ email }}</li>
+          <li>{{detail.first}}</li>
+          <li>{{detail.second}}</li>
+          <li>{{detail.third}}</li>
+          <li>{{detail.fourth}}</li>
+          <li>{{detail.fifth}}</li>
         </ul>
       </el-aside>
     </div>
     <!--    右侧-->
     <div class="content-right">
       <el-tabs>
-        <el-tab-pane label="我的信息"></el-tab-pane>
-        <el-tab-pane label="项目经验"></el-tab-pane>
+        <el-tab-pane label="我的信息">
+          <ul>
+            <li>姓名：{{ own.name }}</li>
+            <li>年龄：{{ own.age }}</li>
+            <li>职业：{{ own.excpect_work }}</li>
+            <li>手机号：{{ own.phoneNumber }}</li>
+            <li>邮箱：{{ own.email }}</li>
+          </ul>
+        </el-tab-pane>
+        <el-tab-pane label="项目经验">
+          <div id="particles-js">
+
+          </div>
+        </el-tab-pane>
         <el-tab-pane label="工作经验"></el-tab-pane>
         <el-tab-pane label="联系方式"></el-tab-pane>
       </el-tabs>
@@ -37,16 +52,20 @@ const {name, age, excpect_work, phoneNumber, email} = ownInfo
 </template>
 
 <style scoped>
+ul li{
+  list-style: none;
+}
 .content{
   display: flex;
+  position: relative;
 }
 .content-left{
   float: left;
+  height: 100%;
 }
 .aside {
   background: #b4dcef;
 }
-
 .content-right {
   float: left;
 }
