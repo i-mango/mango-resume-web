@@ -3,9 +3,9 @@ import Index from "@/views/index.vue";
 </script>
 
 <template>
-
-  <Index/>
-
+  <div id="app">
+    <Index/>
+  </div>
 </template>
 
 <style scoped>
