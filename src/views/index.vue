@@ -13,126 +13,138 @@ const GetWindowHeight = ref({
 const GetTabsHeight =ref({
   height:""
 })
-const GetWindowWidth = ref({
+const GetMainHeight =ref({
+  height:""
+})
+const GetTabsWidth = ref({
+  width: ""
+});
+const GetWindowsWidth = ref({
   width: ""
 });
 const getHeight = () => {
   // 获取浏览器高度
   GetWindowHeight.value.height = window.innerHeight + 'px';
+  //获取主体高度
+  GetMainHeight.value.height = window.innerHeight - 100 + 'px';
   //获取tabs-pane高度
-  GetTabsHeight.value.height = window.innerHeight - 54 + 'px';
-  // 获取浏览器宽度
-  GetWindowWidth.value.width = window.innerWidth - 400 - 8 + 'px';
+  GetTabsHeight.value.height = window.innerHeight - 154 + 'px';
+  //获取浏览器宽度
+  GetWindowsWidth.value.width = window.innerWidth + 'px';
+  // 获取tabs宽度
+  GetTabsWidth.value.width = window.innerWidth - 400 - 8 + 'px';
 }
 </script>
 
 <template>
-  <div class="content">
-    <!--    左侧-->
-    <div class="content-left">
-      <el-aside class="aside" :style="GetWindowHeight">
-        <div class="title">{{ own.title }}</div>
-        <div class="img">
-          <img src="../assets/cute.jpg" alt="" class="avatar">
-        </div>
-        <ul style="margin-top: 30px;margin-right: 10px">
-          <li class="motto">
-            <TypeIt :values="[detail.motto]" :cursor="false" :speed="150"/>
-          </li>
-        </ul>
-      </el-aside>
-    </div>
-    <!--    中间-->
-    <div style="width: 8px;height: 100%;background: #eeeeee;display: flex"></div>
-    <!--    右侧-->
-    <div class="content-right" animated :style="GetWindowWidth">
-      <el-tabs style="margin-left: 10px" class="el-tabs">
-        <el-tab-pane label="首页" :style="GetTabsHeight">
-          <div class="user-info homepage">
-            <div class="control">
-              <div class='box' id='box1'></div>
-              <div class='box' id='box2'> </div>
-              <p>专注{{own.excpect_work}}</p>
-              <div class='box' id='box3'></div>
-              <div class='box' id='box4'></div>
+  <el-container style="margin-left: -50px;padding: 0 ">
+    <el-main :style="GetWindowsWidth" style="padding: 0">
+      <div class="content">
+        <!--    左侧-->
+        <div class="content-left">
+          <el-aside class="aside" :style="GetMainHeight">
+            <div class="title">{{ own.title }}</div>
+            <div class="img">
+              <img src="../assets/cute.jpg" alt="" class="avatar">
             </div>
-          </div>
-        </el-tab-pane>
-        <el-tab-pane label="我的信息">
-          <div class="project-experience">
-            <div
-                style="width:150px;height: 40px;background-image:linear-gradient(0deg,#fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);text-align: center;color: rgba(255, 255, 255, 0.88)">
-              <p style="vertical-align: middle;">我的信息</p>
-            </div>
-            <ul>
-              <li>姓名：{{ own.name }}</li>
-              <li>年龄：{{ own.age }}</li>
-              <li>职业：{{ own.excpect_work }}</li>
-              <li>手机号：{{ own.phoneNumber }}</li>
-              <li>邮箱：{{ own.email }}</li>
+            <ul style="margin-top: 30px;margin-right: 10px">
+              <li class="motto">
+                <TypeIt :values="[detail.motto]" :cursor="false" :speed="150"/>
+              </li>
             </ul>
-          </div>
-        </el-tab-pane>
-        <el-tab-pane label="项目经验">
-          <div class="work-experience"></div>
-        </el-tab-pane>
-        <el-tab-pane label="工作经验">
-          <div class="contract"></div>
-        </el-tab-pane>
-        <el-tab-pane label="联系方式">
-          <div class="user-info">
-            <div></div>
-            <div>
-              <div>
-                <h3>联系方式</h3>
-                <span>一段介绍</span>
-                <el-form>
-                  <el-form-item>
-                    <el-icon></el-icon>
-                    {{ contractInfo.qq }}
-                  </el-form-item>
-                  <el-form-item>
-                    <el-icon></el-icon>
-                    {{ contractInfo.weixin }}
-                  </el-form-item>
-                  <el-form-item>
-                    <el-icon></el-icon>
-                    {{ own.phoneNumber }}
-                  </el-form-item>
-                  <el-form-item>
-                    <el-icon></el-icon>
-                    {{ own.email }}
-                  </el-form-item>
-                  <el-form-item>
-                    <el-icon></el-icon>
-                    {{ contractInfo.github }}
-                  </el-form-item>
-                  <el-form-item>
-                    <el-icon></el-icon>
-                    {{ contractInfo.blog }}
-                  </el-form-item>
-                  <el-form-item>
-                    <el-icon></el-icon>
-                    {{ contractInfo.address }}
-                  </el-form-item>
-                </el-form>
+          </el-aside>
+        </div>
+        <!--    中间-->
+        <div style="width: 8px;height: 100%;background: #eeeeee;display: flex"></div>
+        <!--    右侧-->
+        <div class="content-right" animated :style="GetTabsWidth">
+          <el-tabs style="margin-left: 10px" class="el-tabs">
+            <el-tab-pane label="首页" :style="GetTabsHeight">
+              <div class="user-info homepage">
+                <div class="control">
+                  <div class='box' id='box1'></div>
+                  <div class='box' id='box2'> </div>
+                  <p>专注{{own.excpect_work}}</p>
+                  <div class='box' id='box3'></div>
+                  <div class='box' id='box4'></div>
+                </div>
               </div>
-              <div>
-                <h3>聊一聊</h3>
-                <el-form>
-                  <el-form-item></el-form-item>
-                  <el-form-item></el-form-item>
-                  <el-form-item></el-form-item>
-                  <el-form-item></el-form-item>
-                </el-form>
+            </el-tab-pane>
+            <el-tab-pane label="我的信息">
+              <div class="project-experience">
+                <div style="width: 30%;height:200px;border: 1px solid black"></div>
+                <div style="width: 30%;height:200px;border: 1px solid black"></div>
               </div>
-            </div>
-          </div>
-        </el-tab-pane>
-      </el-tabs>
+            </el-tab-pane>
+            <el-tab-pane label="项目经验">
+              <div class="work-experience"></div>
+            </el-tab-pane>
+            <el-tab-pane label="工作经验">
+              <div class="contract">
 
-    </div>
-  </div>
+              </div>
+            </el-tab-pane>
+            <el-tab-pane label="联系方式">
+              <div class="user-info">
+                <div></div>
+                <div>
+                  <div>
+                    <h3>联系方式</h3>
+                    <span>一段介绍</span>
+                    <el-form>
+                      <el-form-item>
+                        <el-icon></el-icon>
+                        {{ contractInfo.qq }}
+                      </el-form-item>
+                      <el-form-item>
+                        <el-icon></el-icon>
+                        {{ contractInfo.weixin }}
+                      </el-form-item>
+                      <el-form-item>
+                        <el-icon></el-icon>
+                        {{ own.phoneNumber }}
+                      </el-form-item>
+                      <el-form-item>
+                        <el-icon></el-icon>
+                        {{ own.email }}
+                      </el-form-item>
+                      <el-form-item>
+                        <el-icon></el-icon>
+                        {{ contractInfo.github }}
+                      </el-form-item>
+                      <el-form-item>
+                        <el-icon></el-icon>
+                        {{ contractInfo.blog }}
+                      </el-form-item>
+                      <el-form-item>
+                        <el-icon></el-icon>
+                        {{ contractInfo.address }}
+                      </el-form-item>
+                    </el-form>
+                  </div>
+                  <div>
+                    <h3>聊一聊</h3>
+                    <el-form>
+                      <el-form-item></el-form-item>
+                      <el-form-item></el-form-item>
+                      <el-form-item></el-form-item>
+                      <el-form-item></el-form-item>
+                    </el-form>
+                  </div>
+                </div>
+              </div>
+            </el-tab-pane>
+          </el-tabs>
+
+        </div>
+      </div>
+    </el-main>
+    <el-footer :style="GetWindowsWidth" style="height: 100px">
+      <div>Copyright © 2020-2023 沐风 & 芒果 manggo.cn All Rights Reserved.</div>
+      <div>备案号： 陇ICP备2021003158号-1</div>
+      <div>渝公网安备 50011802010624号</div>
+    </el-footer>
+  </el-container>
 </template>
 
 <style scoped>
