@@ -25,10 +25,11 @@ const GetWindowsWidth = ref({
 const getHeight = () => {
   // 获取浏览器高度
   GetWindowHeight.value.height = window.innerHeight + 'px';
+  console.log(GetWindowHeight);
   //获取主体高度
-  GetMainHeight.value.height = window.innerHeight - 100 + 'px';
+  GetMainHeight.value.height = window.innerHeight - 80 + 'px';
   //获取tabs-pane高度
-  GetTabsHeight.value.height = window.innerHeight - 154 + 'px';
+  GetTabsHeight.value.height = window.innerHeight - 134 + 'px';
   //获取浏览器宽度
   GetWindowsWidth.value.width = window.innerWidth + 'px';
   // 获取tabs宽度
@@ -58,9 +59,9 @@ const getHeight = () => {
         <div style="width: 8px;height: 100%;background: #eeeeee;display: flex"></div>
         <!--    右侧-->
         <div class="content-right" animated :style="GetTabsWidth">
-          <el-tabs style="margin-left: 10px" class="el-tabs">
+          <el-tabs class="el-tabs">
             <el-tab-pane label="首页" :style="GetTabsHeight">
-              <div class="user-info homepage">
+              <div class="project-experience homepage">
                 <div class="control">
                   <div class='box' id='box1'></div>
                   <div class='box' id='box2'> </div>
@@ -71,7 +72,7 @@ const getHeight = () => {
               </div>
             </el-tab-pane>
             <el-tab-pane label="我的信息">
-              <div class="project-experience">
+              <div class="user-info">
                 <div style="width: 30%;height:200px;border: 1px solid black"></div>
                 <div style="width: 30%;height:200px;border: 1px solid black"></div>
               </div>
@@ -139,10 +140,9 @@ const getHeight = () => {
         </div>
       </div>
     </el-main>
-    <el-footer :style="GetWindowsWidth" style="height: 100px">
+    <el-footer :style="GetWindowsWidth" style="height: 80px;text-align: center">
       <div>Copyright © 2020-2023 沐风 & 芒果 manggo.cn All Rights Reserved.</div>
-      <div>备案号： 陇ICP备2021003158号-1</div>
-      <div>渝公网安备 50011802010624号</div>
+      <div>备案号： 陇ICP备2021003158号-1<span>渝公网安备 50011802010624号</span></div>
     </el-footer>
   </el-container>
 </template>
@@ -155,7 +155,7 @@ ul li {
 .content {
   display: flex;
   position: relative;
-  margin: 0 -50px;
+//margin: 0 -50px;
 }
 
 .content-left {
@@ -174,7 +174,7 @@ ul li {
 }
 
 .avatar {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 200px;
   height: 200px;
   border-radius: 100px;
