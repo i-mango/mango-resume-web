@@ -76,7 +76,12 @@ const getHeight = () => {
               <div class="user-info">
                 <el-card class="own-info">
                   <el-card class="info-border">
-                    <h1 style="text-align: center">关于我</h1>
+                    <h1 style="text-align: center">教育经历</h1>
+                    <div>
+                      <h3>{{university.name}}</h3>
+                      <h5>{{university.time}}</h5>
+                      {{university.detail}}
+                    </div>
                     <div v-for="item in detail.construction" :key="item">{{item}}</div>
                   </el-card>
                   <el-card class="info-border">
@@ -110,10 +115,6 @@ const getHeight = () => {
                       :icon="Monitor"
                       :title="partTimeJob.name+partTimeJob.time"
                       :description="partTimeJob.detail"/>
-                  <el-step
-                      :icon="School"
-                      :title="university.name+university.time"
-                      :description="university.detail"/>
                 </el-steps>
               </div>
             </el-tab-pane>
