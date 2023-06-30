@@ -31,9 +31,9 @@ const getHeight = () => {
   //获取tabs-pane高度
   GetTabsHeight.value.height = window.innerHeight - 134 + 'px';
   //获取浏览器宽度
-  GetWindowsWidth.value.width = window.innerWidth + 'px';
+  GetWindowsWidth.value.width = window.innerWidth-10 + 'px';
   // 获取tabs宽度
-  GetTabsWidth.value.width = window.innerWidth - 400 - 8 + 'px';
+  GetTabsWidth.value.width = window.innerWidth - 400 - 16 + 'px';
 }
 </script>
 
@@ -77,10 +77,10 @@ const getHeight = () => {
                 <div style="width: 30%;height:200px;border: 1px solid black"></div>
               </div>
             </el-tab-pane>
-            <el-tab-pane label="项目经验">
+            <el-tab-pane label="工作经验">
               <div class="work-experience"></div>
             </el-tab-pane>
-            <el-tab-pane label="工作经验">
+            <el-tab-pane label="项目经验">
               <div class="contract">
 
               </div>
@@ -140,7 +140,7 @@ const getHeight = () => {
         </div>
       </div>
     </el-main>
-    <el-footer :style="GetWindowsWidth" style="height: 80px;text-align: center">
+    <el-footer :style="GetWindowsWidth" style="height: 70px;text-align: center;border-top: 1px #b6b6b6 solid">
       <div>Copyright © 2020-2023 沐风 & 芒果 manggo.cn All Rights Reserved.</div>
       <div>备案号： 陇ICP备2021003158号-1<span>渝公网安备 50011802010624号</span></div>
     </el-footer>
