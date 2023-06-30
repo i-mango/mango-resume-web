@@ -73,8 +73,25 @@ const getHeight = () => {
             </el-tab-pane>
             <el-tab-pane label="我的信息">
               <div class="user-info">
-                <div style="width: 30%;height:200px;border: 1px solid black"></div>
-                <div style="width: 30%;height:200px;border: 1px solid black"></div>
+                <el-card class="own-info">
+                  <el-card class="info-border">
+                    <h1>关于我</h1>
+                    <div v-for="item in detail.construction" :key="item">{{item}}</div>
+                  </el-card>
+                  <el-card class="info-border">
+                    <h1>基本信息</h1>
+                    <ul>
+                      <li>姓名：{{own.name}}</li>
+                      <li>性别：{{own.sex}}</li>
+                      <li>年龄：{{own.age}}</li>
+                      <li>电话：{{own.phoneNumber}}</li>
+                      <li>邮箱：{{own.email}}</li>
+                      <li>地址：{{contractInfo.address}}</li>
+                      <li>期待岗位：{{own.excpect_work}}</li>
+                    </ul>
+                  </el-card>
+                </el-card>
+
               </div>
             </el-tab-pane>
             <el-tab-pane label="工作经验">
@@ -199,16 +216,13 @@ ul li {
 .content-right {
   float: left;
   padding-right: -32px;
-  text-align: center;
   position: relative;
-}
-.el-tabs{
-
 }
 .homepage{
   width: 100%;
   height: 100%;
   background: url(../assets/pink.jpg) no-repeat;
+  text-align: center;
   opacity: 0.7;
   background-size: 100% 120%;
   color: #fff;
@@ -269,6 +283,14 @@ p{
   position: relative;
   left: 150px;
   top: 20px;
+}
+.own-info{
+  display: flex;
+}
+.info-border {
+  width: 50%;
+  height: 400px;
+  float: left;
 }
 .user-info {
   animation: slideInRight 1s 0.02s ease backwards;
