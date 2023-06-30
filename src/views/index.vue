@@ -2,7 +2,7 @@
 import {onMounted, ref} from "vue";
 import ownInfo from "../assets/ownInfo.json";
 import TypeIt from "@/components/typeit";
-import {Edit} from "@element-plus/icons-vue";
+import {School,Monitor,Headset,MessageBox} from "@element-plus/icons-vue";
 
 onMounted(() => {
   getHeight()
@@ -99,19 +99,19 @@ const getHeight = () => {
               <div class="work-experience" :style="GetTabsHeight">
                 <el-steps direction="vertical" :active="4">
                   <el-step
-                      :icon="Edit"
+                      :icon="MessageBox"
                       :title="officialWork.name+officialWork.time"
                       :description="officialWork.detail"/>
                   <el-step
-                      :icon="Edit"
+                      :icon="Headset"
                       :title="partTimeJob.nameAnother+partTimeJob.timeAnother"
                       :description="partTimeJob.detailAnother"/>
                   <el-step
-                      :icon="Edit"
+                      :icon="Monitor"
                       :title="partTimeJob.name+partTimeJob.time"
                       :description="partTimeJob.detail"/>
                   <el-step
-                      :icon="Edit"
+                      :icon="School"
                       :title="university.name+university.time"
                       :description="university.detail"/>
                 </el-steps>
