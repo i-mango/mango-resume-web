@@ -104,17 +104,17 @@ const getHeight = () => {
               <div class="work-experience" :style="GetTabsHeight">
                 <el-steps direction="vertical" :active="4">
                   <el-step
-                      :icon="MessageBox"
-                      :title="officialWork.name+officialWork.time"
-                      :description="officialWork.detail"/>
+                      :icon="Monitor"
+                      :title="partTimeJob.name+partTimeJob.time"
+                      :description="partTimeJob.detail"/>
                   <el-step
                       :icon="Headset"
                       :title="partTimeJob.nameAnother+partTimeJob.timeAnother"
                       :description="partTimeJob.detailAnother"/>
                   <el-step
-                      :icon="Monitor"
-                      :title="partTimeJob.name+partTimeJob.time"
-                      :description="partTimeJob.detail"/>
+                      :icon="MessageBox"
+                      :title="officialWork.name+officialWork.time"
+                      :description="officialWork.detail"/>
                 </el-steps>
               </div>
             </el-tab-pane>
@@ -320,9 +320,9 @@ p{
   animation: slideInLeft 1s 0.02s ease backwards;
 }
 .work-experience {
-  animation: slideInDown 3s 0.02s ease backwards;
+  animation: slideInUp 3s 0.02s ease backwards;
 }
 .contract {
-  animation: slideInUp 1s 0.02s ease backwards;
+  animation: slideInDown 1s 0.02s ease backwards;
 }
 </style>
