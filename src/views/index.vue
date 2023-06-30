@@ -2,11 +2,12 @@
 import {onMounted, ref} from "vue";
 import ownInfo from "../assets/ownInfo.json";
 import TypeIt from "@/components/typeit";
+import {Edit} from "@element-plus/icons-vue";
 
 onMounted(() => {
   getHeight()
 })
-const {own, detail, contractInfo} = ownInfo
+const {own, detail, contractInfo,university,partTimeJob,officialWork} = ownInfo
 const GetWindowHeight = ref({
   height: ""
 });
@@ -75,19 +76,19 @@ const getHeight = () => {
               <div class="user-info">
                 <el-card class="own-info">
                   <el-card class="info-border">
-                    <h1>关于我</h1>
+                    <h1 style="text-align: center">关于我</h1>
                     <div v-for="item in detail.construction" :key="item">{{item}}</div>
                   </el-card>
                   <el-card class="info-border">
-                    <h1>基本信息</h1>
+                    <h1 style="text-align: center">基本信息</h1>
                     <ul>
-                      <li>姓名：{{own.name}}</li>
-                      <li>性别：{{own.sex}}</li>
-                      <li>年龄：{{own.age}}</li>
-                      <li>电话：{{own.phoneNumber}}</li>
-                      <li>邮箱：{{own.email}}</li>
-                      <li>地址：{{contractInfo.address}}</li>
-                      <li>期待岗位：{{own.excpect_work}}</li>
+                      <li>姓名：<span style="padding-left: 50px">{{own.name}}</span></li>
+                      <li>性别：<span style="padding-left: 50px">{{own.sex}}</span></li>
+                      <li>年龄：<span style="padding-left: 50px">{{own.age}}</span></li>
+                      <li>电话：<span style="padding-left: 50px">{{own.phoneNumber}}</span></li>
+                      <li>邮箱：<span style="padding-left: 50px">{{own.email}}</span></li>
+                      <li>地址：<span style="padding-left: 50px">{{contractInfo.address}}</span></li>
+                      <li>期待岗位：<span style="padding-left: 50px">{{own.excpect_work}}</span></li>
                     </ul>
                   </el-card>
                 </el-card>
@@ -95,7 +96,26 @@ const getHeight = () => {
               </div>
             </el-tab-pane>
             <el-tab-pane label="工作经验">
-              <div class="work-experience"></div>
+              <div class="work-experience" :style="GetTabsHeight">
+                <el-steps direction="vertical" :active="4">
+                  <el-step
+                      :icon="Edit"
+                      :title="officialWork.name+officialWork.time"
+                      :description="officialWork.detail"/>
+                  <el-step
+                      :icon="Edit"
+                      :title="partTimeJob.nameAnother+partTimeJob.timeAnother"
+                      :description="partTimeJob.detailAnother"/>
+                  <el-step
+                      :icon="Edit"
+                      :title="partTimeJob.name+partTimeJob.time"
+                      :description="partTimeJob.detail"/>
+                  <el-step
+                      :icon="Edit"
+                      :title="university.name+university.time"
+                      :description="university.detail"/>
+                </el-steps>
+              </div>
             </el-tab-pane>
             <el-tab-pane label="项目经验">
               <div class="contract">
@@ -299,9 +319,9 @@ p{
   animation: slideInLeft 1s 0.02s ease backwards;
 }
 .work-experience {
-  animation: slideInUp 1s 0.02s ease backwards;
+  animation: slideInDown 3s 0.02s ease backwards;
 }
 .contract {
-  animation: slideInDown 1s 0.02s ease backwards;
+  animation: slideInUp 1s 0.02s ease backwards;
 }
 </style>
