@@ -2,12 +2,12 @@
 import {onMounted, ref} from "vue";
 import ownInfo from "../assets/ownInfo.json";
 import TypeIt from "@/components/typeit";
-import {School,Monitor,Headset,MessageBox} from "@element-plus/icons-vue";
+import {Monitor,Headset,MessageBox} from "@element-plus/icons-vue";
 
 onMounted(() => {
   getHeight()
 })
-const {own, detail, contractInfo,university,partTimeJob,officialWork} = ownInfo
+const {own, detail, contractInfo,university,partTimeJob,officialWork,projectExperience} = ownInfo
 const GetWindowHeight = ref({
   height: ""
 });
@@ -120,7 +120,11 @@ const getHeight = () => {
             </el-tab-pane>
             <el-tab-pane label="项目经验">
               <div class="contract">
-
+                <el-card v-for="item in projectExperience" :key="item">
+                  <h1>{{item.name}}</h1>
+                  <h3>{{item.time}}</h3>
+                  <div>{{item.detail}}</div>
+                </el-card>
               </div>
             </el-tab-pane>
             <el-tab-pane label="联系方式">
