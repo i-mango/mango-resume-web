@@ -2,12 +2,12 @@
 import {onMounted, ref} from "vue";
 import ownInfo from "../assets/ownInfo.json";
 import TypeIt from "@/components/typeit";
-import {Monitor,Headset,MessageBox} from "@element-plus/icons-vue";
+import {Monitor, Headset, MessageBox, Message} from "@element-plus/icons-vue";
 
 onMounted(() => {
   getHeight()
 })
-const {own, detail, contractInfo,university,partTimeJob,officialWork,projectExperience} = ownInfo
+const {own, detail, university,partTimeJob,officialWork,projectExperience} = ownInfo
 const GetWindowHeight = ref({
   height: ""
 });
@@ -92,7 +92,7 @@ const getHeight = () => {
                       <li>年龄：<span style="padding-left: 50px">{{own.age}}</span></li>
                       <li>电话：<span style="padding-left: 50px">{{own.phoneNumber}}</span></li>
                       <li>邮箱：<span style="padding-left: 50px">{{own.email}}</span></li>
-                      <li>地址：<span style="padding-left: 50px">{{contractInfo.address}}</span></li>
+                      <li>地址：<span style="padding-left: 50px">{{own.address}}</span></li>
                       <li>期待岗位：<span style="padding-left: 50px">{{own.excpect_work}}</span></li>
                     </ul>
                   </el-card>
@@ -129,52 +129,28 @@ const getHeight = () => {
             </el-tab-pane>
             <el-tab-pane label="联系方式">
               <div class="user-info">
-                <div></div>
-                <div>
-                  <div>
-                    <h3>联系方式</h3>
-                    <span>一段介绍</span>
-                    <el-form>
-                      <el-form-item>
-                        <el-icon></el-icon>
-                        {{ contractInfo.qq }}
-                      </el-form-item>
-                      <el-form-item>
-                        <el-icon></el-icon>
-                        {{ contractInfo.weixin }}
-                      </el-form-item>
-                      <el-form-item>
-                        <el-icon></el-icon>
-                        {{ own.phoneNumber }}
-                      </el-form-item>
-                      <el-form-item>
-                        <el-icon></el-icon>
-                        {{ own.email }}
-                      </el-form-item>
-                      <el-form-item>
-                        <el-icon></el-icon>
-                        {{ contractInfo.github }}
-                      </el-form-item>
-                      <el-form-item>
-                        <el-icon></el-icon>
-                        {{ contractInfo.blog }}
-                      </el-form-item>
-                      <el-form-item>
-                        <el-icon></el-icon>
-                        {{ contractInfo.address }}
-                      </el-form-item>
-                    </el-form>
+                <el-card>
+                  <div style="display:flex;">
+                    <div>
+                      <el-form>
+                        <el-form-item>
+                          <el-input :prefix-icon="Message" placeholder="字体"/>
+                          <el-input type="textarea" placeholder="message"/>
+                        </el-form-item>
+                        <el-form-item>
+                          <button>发送</button>
+                        </el-form-item>
+                      </el-form>
+                    </div>
+                    <div>信息</div>
                   </div>
                   <div>
-                    <h3>聊一聊</h3>
-                    <el-form>
-                      <el-form-item></el-form-item>
-                      <el-form-item></el-form-item>
-                      <el-form-item></el-form-item>
-                      <el-form-item></el-form-item>
-                    </el-form>
+                    <img src="../assets/github.svg" alt="">
+                    <img src="../assets/blog.svg" alt="">
+                    <img src="../assets/QQ.svg" alt="">
+                    <img src="../assets/wechart.svg" alt="">
                   </div>
-                </div>
+                </el-card>
               </div>
             </el-tab-pane>
           </el-tabs>
