@@ -142,7 +142,17 @@ const getHeight = () => {
                         </el-form-item>
                       </el-form>
                     </div>
-                    <div>信息</div>
+                    <div>
+                      <ul>
+                        <li>电话：<span style="padding-left: 50px">{{own.phoneNumber}}</span></li>
+                        <li>邮箱：<span style="padding-left: 50px">{{own.email}}</span></li>
+                        <li>QQ：<span style="padding-left: 50px">{{own.qq}}</span></li>
+                        <li>微信：<span style="padding-left: 50px">{{own.weixin}}</span></li>
+                        <li>github：<span style="padding-left: 50px">{{own.github}}</span></li>
+                        <li>博客：<span style="padding-left: 50px">{{own.blog}}</span></li>
+                        <li>地址：<span style="padding-left: 50px">{{own.address}}</span></li>
+                      </ul>
+                    </div>
                   </div>
                   <div>
                     <img src="../assets/github.svg" alt="">
