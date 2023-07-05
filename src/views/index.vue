@@ -250,6 +250,10 @@ a:hover{
   padding-right: -32px;
   position: relative;
 }
+>>> .el-tabs__item{
+  padding-left: 60px;
+  padding-right: 60px;
+}
 .homepage{
   width: 100%;
   height: 100%;
