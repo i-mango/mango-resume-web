@@ -144,21 +144,34 @@ const getHeight = () => {
                     </div>
                     <div>
                       <ul>
-                        <li>电话：<span style="padding-left: 50px">{{own.phoneNumber}}</span></li>
-                        <li>邮箱：<span style="padding-left: 50px">{{own.email}}</span></li>
-                        <li>QQ：<span style="padding-left: 50px">{{own.qq}}</span></li>
-                        <li>微信：<span style="padding-left: 50px">{{own.weixin}}</span></li>
-                        <li>github：<span style="padding-left: 50px">{{own.github}}</span></li>
-                        <li>博客：<span style="padding-left: 50px">{{own.blog}}</span></li>
-                        <li>地址：<span style="padding-left: 50px">{{own.address}}</span></li>
+                        <li>电话：<span style="margin-left: 50px">{{own.phoneNumber}}</span></li>
+                        <li>邮箱：<span style="margin-left: 50px">{{own.email}}</span></li>
+                        <li>QQ：<span style="margin-left: 50px">{{own.qq}}</span></li>
+                        <li>微信：<span style="margin-left: 50px">{{own.weixin}}</span></li>
+                        <li>GitHub：<a :href="own.github" target="_blank" style="margin-left: 50px">我的Github</a></li>
+                        <li>博客：<a :href="own.blog" target="_blank" style="margin-left: 50px">我的博客</a></li>
+                        <li>地址：<span style="margin-left: 50px">{{own.address}}</span></li>
                       </ul>
                     </div>
                   </div>
-                  <div>
-                    <img src="../assets/github.svg" alt="">
-                    <img src="../assets/blog.svg" alt="">
-                    <img src="../assets/QQ.svg" alt="">
-                    <img src="../assets/wechart.svg" alt="">
+                  <div style="border-top: grey solid 1px;padding-bottom: 10px;"></div>
+                  <div style="display:flex;margin-left: 40%">
+                    <div id="box">
+                      <!-- 用于显示qq图标 -->
+                      <div id="qq">
+                        <!-- 用于显示，隐藏二维码图片 -->
+                        <div id="qq-code"></div>
+                      </div>
+                    </div>
+                    <div id="box">
+                      <!-- 用于显示微信图标 -->
+                      <div id="wechat">
+                        <!-- 用于显示，隐藏二维码图片 -->
+                        <div id="code"></div>
+                      </div>
+                    </div>
+                    <a :href="own.github" target="_blank" style="margin-left: 80px"><img src="../assets/github.svg" alt=""></a>
+                    <a :href="own.blog" target="_blank" style="margin-left: 10px"><img src="../assets/blog.svg" alt=""></a>
                   </div>
                 </el-card>
               </div>
@@ -179,7 +192,10 @@ const getHeight = () => {
 ul li {
   list-style: none;
 }
-
+a:hover{
+  background: none;
+  color: #b3e19d;
+}
 .content {
   display: flex;
   position: relative;
@@ -302,6 +318,69 @@ p{
   width: 50%;
   height: 400px;
   float: left;
+}
+#box {
+  width: 32px;
+  height: 32px;
+  position: fixed;
+//bottom: 0px;
+}
+
+#wechat {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/Wechart.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+//margin-left: 28px;
+  position: relative;
+}
+#qq{
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/q.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-left: 40px;
+  position: relative;
+}
+#code {
+  display: none;
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  background-image: url("../assets/weichart.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left: -66px;
+  bottom: 70px;
+}
+#qq-code{
+  display: none;
+  width: 180px;
+  height: 180px;
+  background-color: white;
+  background-image: url("../assets/qq.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  left: -66px;
+  bottom: 70px;
+}
+#wechat:hover {
+  background-image: url("../assets/Wechat.png");
+}
+
+#wechat:hover>#code{
+  display: block;
+}
+#qq:hover {
+  background-image: url("../assets/QQ.png");
+}
+
+#qq:hover>#qq-code{
+  display: block;
 }
 .user-info {
   animation: slideInRight 1s 0.02s ease backwards;
