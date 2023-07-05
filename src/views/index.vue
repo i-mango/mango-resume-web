@@ -134,24 +134,26 @@ const getHeight = () => {
                     <div>
                       <el-form>
                         <el-form-item>
-                          <el-input :prefix-icon="Message" placeholder="字体"/>
-                          <el-input type="textarea" placeholder="message"/>
+                          <el-input :prefix-icon="Message" placeholder="字体" style="height: 40px"/>
+                          <br>
+                          <br>
+                          <el-input type="textarea" placeholder="message" :rows="10"/>
                         </el-form-item>
                         <el-form-item>
-                          <button>发送</button>
+                          <el-button type="primary" plain>发送</el-button>
                         </el-form-item>
                       </el-form>
                     </div>
-                    <div>
-                      <ul>
-                        <li>电话：<span style="margin-left: 50px">{{own.phoneNumber}}</span></li>
-                        <li>邮箱：<span style="margin-left: 50px">{{own.email}}</span></li>
-                        <li>QQ：<span style="margin-left: 50px">{{own.qq}}</span></li>
-                        <li>微信：<span style="margin-left: 50px">{{own.weixin}}</span></li>
-                        <li>GitHub：<a :href="own.github" target="_blank" style="margin-left: 50px">我的Github</a></li>
-                        <li>博客：<a :href="own.blog" target="_blank" style="margin-left: 50px">我的博客</a></li>
-                        <li>地址：<span style="margin-left: 50px">{{own.address}}</span></li>
-                      </ul>
+                    <div style="margin: auto">
+                      <el-form>
+                        <el-form-item label="电话：">{{own.phoneNumber}}</el-form-item>
+                        <el-form-item label="邮箱：">{{own.email}}</el-form-item>
+                        <el-form-item label="QQ：">{{own.qq}}</el-form-item>
+                        <el-form-item label="微信：">{{own.weixin}}</el-form-item>
+                        <el-form-item label="GitHub："><a :href="own.github" target="_blank">我的Github</a></el-form-item>
+                        <el-form-item label="博客："><a :href="own.blog" target="_blank">我的博客</a></el-form-item>
+                        <el-form-item label="地址：">{{own.address}}</el-form-item>
+                      </el-form>
                     </div>
                   </div>
                   <div style="border-top: grey solid 1px;padding-bottom: 10px;"></div>
@@ -172,6 +174,9 @@ const getHeight = () => {
                     </div>
                     <a :href="own.github" target="_blank" style="margin-left: 80px"><img src="../assets/github.svg" alt=""></a>
                     <a :href="own.blog" target="_blank" style="margin-left: 10px"><img src="../assets/blog.svg" alt=""></a>
+                    <a :href="own.resume" target="_blank" style="margin-left: 10px">
+                      <img src="../assets/favicon.ico" alt="" style="width: 32px;height: 32px">
+                    </a>
                   </div>
                 </el-card>
               </div>
@@ -275,7 +280,7 @@ a:hover{
   top: 40%;
 }
 p{
-  text-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
   letter-spacing: 10px;
 }
 .box{
