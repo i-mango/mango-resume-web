@@ -4,16 +4,31 @@
     "name": "果果",
     "sex": "女",
     "age": 23,
-    "excpect_work": "前端开发",
+    "expect_work": "Web前端开发",
     "phoneNumber": "19922984760",
     "email": "admin@manggo.cn",
     "qq": "1903914619",
     "weixin": "Mangoo_guo",
     "github": "https://github.com/i-mango?tab=repositories",
-    "blog": "https://blog.manggo.cn/",
+    "blog": "https://github.com/i-mango/mango-blog-web.git",
     "gitee": "https://gitee.com/manguopan/projects",
     "resume": "https://www.manggo.cn/",
     "address": "重庆"
+  },
+  "skills": {
+    "skill": "Vue全家桶",
+    "language1":"Vue",
+    "language2":"JavaScript",
+    "language3":"CSS",
+    "language4":"JQuery",
+    "language5":"uni-app",
+    "language6":"Webpack",
+    "language7":"Linux"
+  },
+  "university": {
+    "time": "2018.09-2022.06",
+    "name": "重庆文理学院/人工智能学院/软件工程专业",
+    "detail": "曾多次获得综合奖学金，通过了CET4，普通话二级乙等，取得了ACAA证书，优秀青年。。曾加入了院级的心理健康部和校级生活权益部，在校级部门中曾任部长助理，负责协助部长整理卫生统计表、安排例会事宜、与其他部门交接，协助组织策划1好几场大型会议。"
   },
   "detail": {
     "motto": [
@@ -37,24 +52,32 @@
       "十分期待您的联系！"
     ]
   },
-  "university": {
-    "time": "2018.09-2022.06",
-    "name": "重庆文理学院/人工智能学院/软件工程专业",
-    "detail": "曾多次获得综合奖学金，通过了CET4，普通话二级乙等，取得了ACAA证书，优秀青年。。曾加入了院级的心理健康部和校级生活权益部，在校级部门中曾任部长助理，负责协助部长整理卫生统计表、安排例会事宜、与其他部门交接，协助组织策划1好几场大型会议。"
-  },
-  "partTimeJob": {
-    "time": "2021.01-2022.02",
-    "name": "仁宝电脑",
-    "detail": "主要负责电脑生产流水线出现问题的电脑的维修",
-    "timeAnother": "2022.06-2022.08",
-    "nameAnother": "重庆先特服务外包产业有限公司",
-    "detailAnother": "主要负责接听广电客户的电话，为她们解答疑问，解决问题。"
-  },
-  "officialWork": {
-    "time": "2022.08-现在",
-    "name": "重庆恢恢信息技术有限公司",
-    "detail": "在该公司做web前端前端开发。"
-  },
+  "workExp": [
+    {
+      "timestamp": "2021.01-2022.02",
+      "size": "large",
+      "type": "primary",
+      "icon": "MoreFilled",
+      "name": "仁宝电脑",
+      "detail": "主要负责电脑生产流水线出现问题的电脑的维修"
+    },
+    {
+      "timestamp": "2022.06-2022.08",
+      "size": "large",
+      "type": "primary",
+      "icon": "MoreFilled",
+      "name": "重庆先特服务外包产业有限公司",
+      "detail": "主要负责接听广电客户的电话，为她们解答疑问，解决问题。"
+    },
+    {
+      "timestamp": "2022.08-现在",
+      "size": "large",
+      "type": "primary",
+      "icon": "MoreFilled",
+      "name": "重庆恢恢信息技术有限公司",
+      "detail": "在该公司做web前端前端开发。"
+    }
+  ],
   "projectExperience": [
     {
       "name": "北碚建委项目",
