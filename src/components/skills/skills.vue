@@ -54,7 +54,6 @@ span.language1{
   height: 300px;
   line-height: 300px;
   font-size: 50px;
-//margin-left: 15%;
 }
 span.language2{
   background-color: rgba(255,153,102,0.5);
