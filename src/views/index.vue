@@ -6,7 +6,7 @@ import Profile from "@/components/profile/profile.vue";
 import Skills from "@/components/skills/skills.vue";
 import WorkExp from "@/components/workExp/workExp.vue";
 import ProjectExp from "@/components/projectExp/projectExp.vue";
-import Footer from "@/components/footer/footer.vue";
+import Footer from "@/components/footer/footer-include.vue";
 </script>
 
 <template>
