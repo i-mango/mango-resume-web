@@ -1,5 +1,13 @@
-<script setup lang='ts'>
-
+<script>
+import ownInfo from '@/assets/ownInfo.json'
+export default {
+  name: 'projectExp',
+  data() {
+    return {
+      projectExp: ownInfo.projectExperience,
+    };
+  }
+}
 </script>
 
 <template>
